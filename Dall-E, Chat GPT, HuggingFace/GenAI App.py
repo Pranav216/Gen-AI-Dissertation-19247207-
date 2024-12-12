@@ -6,14 +6,13 @@ from diffusers import StableDiffusionPipeline
 import torch
 
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
+openai.api_key = "Enter your Open-AI API key here."
 
 #function to generate AI based images using OpenAI Dall-E
-# def generate_images_using_openai(text):
-#     response = openai.Image.create(prompt= text, n=1, size="512x512")
-#     image_url = response['data'][0]['url']
-#     return image_url
+def generate_images_using_openai(text):
+    response = openai.Image.create(prompt= text, n=1, size="512x512")
+    image_url = response['data'][0]['url']
+    return image_url
 
 #function to generate AI based images using Huggingface Diffusers
 def generate_images_using_huggingface_diffusers(text):
